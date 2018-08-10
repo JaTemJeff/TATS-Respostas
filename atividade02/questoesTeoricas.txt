@@ -1,0 +1,101 @@
+Aluno: Jefferson de França Filho
+Ra: 1429426
+
+Todas as responstas foram baseadas no Syllabus Foundation Level - v 2011br - Disponibilizado pelo ISTQB:
+disponível no link: http://bstqb.org.br/uploads/syllabus/syllabus_ctfl_2011br.pdf)
+Ou baseadas em experiências no mercado de trabalho:
+(Software Quality Assurance QA - Test Analyst na empresa Leanwork Group)
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+1- O que é o teste de software? Qual a melhor definição?
+R: Teste de software - é uma etapa de desenvolvimento de software onde o principal objetivo é encontrar possíveis falhas e/ou bugs no produto, além de avaliar sua qualidade. Ou seja, 
+o teste define se o produto faz oque deveria fazer, e se faz de maneira correta, sem bugs ou falhas. Se um produto de software tem poucas falhas, pode-se garantir que sua qualidade é elevada. 
+OBS: Mesmo que um produto de software seja testado exaustivamente, não pode-se garantir que ele não contém falhas. 
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+2- O que é teste de unidade, integração e sistema?
+R: O ISTQB define cada tipo de teste da seguinte maneira: 
+
+*Teste de componentes (também chamado de Teste de unidade) - procura defeitos e verifica o funcionamento do software (ex.: módulos, programas,
+objetos, classes, etc.) que são testáveis separadamente. Pode ser feito isolado do resto do sistema, dependendo
+do contexto do ciclo de desenvolvimento e do sistema. Controladores (“drivers”) e simuladores (“stubs”)
+podem ser usados.
+
+*Teste de integração - é caracterizado por testar as interfaces entre os componentes, interações de diferentes
+partes de um sistema, como o sistema operacional, arquivos, hardware ou interfaces entre os sistemas.
+
+*Teste de sistema - se refere ao comportamento de todo do sistema / produto definido pelo escopo de um projeto
+ou programa de desenvolvimento.
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+3- O que é um caso de teste? Dê exemplos.
+R: Casos de teste são situações específicas em que um software deve ser testado, ou seja, são casos onde o software deve ter determinado comportamento como resultado. De acordo com o tipo de teste, e ambiente. 
+Exemplo:
+Teste 1: Teste de Cadastro
+	Caso de teste 1: Cadastro correto - Exibir mensagem de confirmação: "Cadastro realizado com sucesso"
+	Caso de teste 2: Cadastro contendo campos inválidos - Exibir mensagem de erro: "Nome-do-campo inválido"
+	Caso de teste 3: Cadastro contendo campos em branco - Exbiri mensagem de erro: "Nome-do-campo obrigatório" (somente se o campo for obrigatório) 
+	...
+Teste2: Teste de Login
+	Caso de teste 1: Login e senha corretos - Efetuar login
+	Caso de teste 2: Login incorreto e senha correta - Exibir mensagem de erro: "Login incorreto"
+	caso de teste 3: Senha incorreta e login correto - Exibir mensagem de erro: "Senha incorreta"
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+4- Qual a diferença entre um teste manual e um teste automatizado?
+R: 
+*Testes manuais: Os testes são executados manualmente, ou seja, uma pessoa é responsável por executar os roteiros de testes, e analisar os resultados esperados. 
+*Testes automatizados: Os casos de testes são executados pelo computador, e suas respostas também são analisadas pelo computador.
+
+Vantagens: Os testes automatizados trazem como vantagem o tempo de execução, apesar de levarem mais tempo para serem codificados são mais eficientes quando precisam ser executados novamente (teste de regressão).
+Outra vantagem, é o fato de que se os códigos tem suas assertivas escritas de maneira correta, tendem a validar melhor os casos de teste, 
+pois é mais fácil um ser humano errar e esquecer de verificar algum critério de aceitação. 
+
+Desvantagens: Os códigos automatizados precisam de constante manutenção, por exemplo se o ambiente testado for um ambiente que sofre com atualizações constantes, é possível que os campos, se forem atribuidos 
+ID's e Xpaths dinâmicos, tenham alterações, precisando ser modificados no código. Outro exemplo é a adição de page's caso sejam adicionadas novas telas ao ambiente. (se tratando de testes automatizados)
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+5- Explique a diferença entre o teste caixa-branca e o teste caixa-preta.
+R:
+*Caixa-branca - Visam avaliar as clausulas de código, a lógica interna do componente codificado, as configurações e outros elementos técnicos.
+*Caixa-preta - Visa avaliar a funcionalidade e a aderência aos requisitos, em uma ótica externa ou do usuário, sem basear em qualquer conhecimento do código e da lógica interna do componente testado.
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+6- O que é um teste de regressão?
+R:  O ISTQB define o teste de regressão da seguinte maneira: 
+*Teste de regressão - é o teste repetido de um programa que já foi testado, após sua modificação, para descobrir
+a existência de algum defeito introduzido ou não coberto originalmente como resultado da mudança. Estes
+defeitos podem estar no software ou em um componente, relacionado ou não ao software. É realizado quando
+o software, ou seu ambiente é modificado. A quantidade de teste de regressão é baseada no risco de não se
+encontrar defeitos no software que estava funcionando previamente
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+7- O que é um critério de teste? Cite exemplos.
+R: Os critérios de testes são basicamente, especificações de um caso de teste que precisam ser aceitas para o teste passar, ou seja, são critérios de aceitação. Lembrando que os critérios 
+variam de acordo para cada tipo de teste, e caso de teste específico. 
+
+Exemplo 1: 
+	-Caso de Teste: Teste de responsividade de determinada tela 
+	-Critérios: Os componentes e elementos da tela devem ser responsivos aos seguintes tamanhos de tela:
+		-Mobile - A partir da resolução Mobile S (A partir de 320px)
+		-Desktop - até a resolução 4k (no máximo 2560px) 
+
+OBS: Teste falha caso contenha alguma quebra de layout nas resoluções especificadas (componentes cortados, sobreposição de campos, etc). 
+
+Exemplo 2: 
+	-Caso de Teste: Teste de validações de inputs de determinada tela
+	-Critérios: Os inputs da tela devem atender as seguintes restrições:
+		-Limite de caracteres: Limitar a quantidade de caracteres permitidos nos inputs de acordo com a limitação do banco de dados (Back e front) 
+		-Uso de máscaras: Os seguintes campos devem utilizar máscaras para validação (Front):
+			- Telefone: (00) 00000-0000
+			- E-mail: a...a@a...a.com / a...a@a...a.com.br
+			- CPF: 000.000.000-00
+		-Validações para os seguintes campos (Back):
+			- CPF: Permitir somente CPF válido, caso seja insirido um CPF inválido exibir a mensagem: "CPF inválido".
+			- E-mail: Permitir somente uma formatação de e-mail válido, caso sejá inserido um formato de email inválido, exibir a mensagem: "E-mail inválido".
+
+OBS: Teste falha caso algum critério não esteja sendo respeitado.
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/

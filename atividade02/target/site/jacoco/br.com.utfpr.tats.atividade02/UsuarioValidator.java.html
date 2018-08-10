@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>UsuarioValidator.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">atividade02</a> &gt; <a href="index.source.html" class="el_package">br.com.utfpr.tats.atividade02</a> &gt; <span class="el_source">UsuarioValidator.java</span></div><h1>UsuarioValidator.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package br.com.utfpr.tats.atividade02;
+
+/**
+ *
+ * @author Jeff
+ */
+public class UsuarioValidator {
+    private UsuarioDAO usuarioDao;
+    private SenhaValidator senhaValidator;
+<span class="fc" id="L15">    public UsuarioValidator(UsuarioDAO usuarioDao) {</span>
+<span class="fc" id="L16">        this.usuarioDao = usuarioDao;</span>
+<span class="fc" id="L17">    }</span>
+    public void setSenhaValidator(SenhaValidator senhaValidator) {
+<span class="nc" id="L19">        this.senhaValidator = senhaValidator;</span>
+<span class="nc" id="L20">    }</span>
+    public boolean ehUsuarioValido(Usuario u) throws Exception {
+<span class="fc bfc" id="L22" title="All 2 branches covered.">        if(u.getNome().length() &lt; 5) throw new Exception(&quot;nome do usuario precisa de pelo menos 5 caracteres&quot;);</span>
+        
+<span class="pc bpc" id="L24" title="1 of 2 branches missed.">        if(! u.getSenha().equals(u.getSenhaConfirmada())) throw new Exception(&quot;senhas diferentes&quot;);</span>
+        
+<span class="nc bnc" id="L26" title="All 2 branches missed.">        if(senhaValidator.verificar( u.getSenha() )) throw new Exception(&quot;senha invalida&quot;); </span>
+
+<span class="nc" id="L28">        String nome = u.getNome();</span>
+<span class="nc" id="L29">        boolean isValid = true;</span>
+<span class="nc bnc" id="L30" title="All 2 branches missed.">        for(int i = 0; i &lt; nome.length(); i++) {</span>
+<span class="nc" id="L31">            char atual = nome.charAt(i);</span>
+<span class="nc bnc" id="L32" title="All 4 branches missed.">            if(!Character.isAlphabetic(atual) &amp;&amp; !Character.isDigit(atual)) {</span>
+<span class="nc" id="L33">                isValid = false;</span>
+<span class="nc" id="L34">                break;</span>
+            }
+        }
+<span class="nc bnc" id="L37" title="All 2 branches missed.">        if(usuarioDao.getByName( u.getNome() ) != null) throw new Exception(&quot;usuario ja existe&quot;);</span>
+<span class="nc" id="L38">            return isValid;</span>
+    }
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>
