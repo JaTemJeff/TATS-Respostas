@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="0" name="atividade02Test" time="0.296" errors="0" skipped="0">
+<testsuite tests="6" failures="0" name="atividade02Test" time="0.297" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_151\jre\bin"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\Jeff\Desktop\TATS\TATS-Respostas\atividade02"/>
+    <property name="user.dir" value="C:\Users\Jeff\Desktop\TATS\TATS-Respostas\atividade02\atividade02"/>
     <property name="java.runtime.version" value="1.8.0_151-b12"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_151\jre\lib\endorsed"/>
@@ -64,7 +64,7 @@
   <testcase classname="atividade02Test" name="usuarioJaExisteTest" time="0.159"/>
   <testcase classname="atividade02Test" name="usuarioInvalidoTest" time="0"/>
   <testcase classname="atividade02Test" name="usuarioEmBrancoTest" time="0"/>
-  <testcase classname="atividade02Test" name="senhaInvalidaTest" time="0.001"/>
+  <testcase classname="atividade02Test" name="senhaInvalidaTest" time="0.002"/>
   <testcase classname="atividade02Test" name="usuarioValidoTest" time="0"/>
   <testcase classname="atividade02Test" name="senhasDiferentesTest" time="0"/>
 </testsuite>
