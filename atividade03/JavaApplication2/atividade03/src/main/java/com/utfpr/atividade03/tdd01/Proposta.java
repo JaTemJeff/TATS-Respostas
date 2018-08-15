@@ -13,7 +13,12 @@ public class Proposta {
     float total; 
     int numeroParcelas;
     float valorParcela;
-
+    
+    Proposta(float pValorTotal, int pNumeroParcelas){
+        total = pValorTotal;
+        numeroParcelas = pNumeroParcelas;
+    }
+    
     public float getTotal() {
         return total;
     }
