@@ -1,7 +1,4 @@
 package codigo;
-
-import codigo.Funcionario;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -12,48 +9,47 @@ import codigo.Funcionario;
  * @author Notebook
  */
 public class ControladorCargo {
-
-    Funcionario f = new Funcionario();
     int salarioAtualizado;
 
     public float calcular(String cargo, float salario) {
         if (cargo == "DESENVOLVEDOR") {
             if (salario >= 3000) {
                 //-20%
-                return salario - (salario * 0.2f));
+                return (salario - (salario * 0.2f));
             } else {
                 //-10%
-                return salario - (salario * 0.1f));
+                return (salario - (salario * 0.1f));
             }
         }
         if (cargo == "DBA") {
-            if (f.getSalarioBase() >= 2000) {
+            if (salario >= 2000) {
                 //-25%
-                return salario - (salario * 0.25f));
+                return (salario -(salario*0.25f));
             } else {
                 //-15%
-                return salario - (salario * 0.15f));
+                return (salario - (salario * 0.15f));
             }
         }
         
         if (cargo == "TESTADOR") {
             if (salario >= 2000) {
                 //-25%
-                return salario - (salario * 0.25f));
+                return (salario - (salario * 0.25f));
             } else {
                 //-15%
-                return salario - (salario * 0.15f));
+                return (salario - (salario * 0.15f));
             }
         }
         if (cargo == "GERENTE") {
             if (salario >= 5000) {
                 //-30%
-                return salario - (salario * 0.3f));
+                return (salario - (salario * 0.3f));
             } else {
                 //-20%
-                return salario - (salario * 02f));
+                return (salario - (salario * 02f));
             }
         }
+        return 0;
     }
 
 }
