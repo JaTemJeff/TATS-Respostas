@@ -21,11 +21,17 @@ public class Calculadora {
             propostas.add(new Proposta(2 * valorDoEmprestimo, 3));
 
             return propostas;
-        } else{
+        } else if (valorDoEmprestimo <= 5000){
             propostas.add(new Proposta(1.3f * valorDoEmprestimo, 2));
             propostas.add(new Proposta(1.5f * valorDoEmprestimo, 4));
             propostas.add(new Proposta(1.5f * valorDoEmprestimo, 10));
 
+            return propostas;
+        }else{
+            propostas.add(new Proposta(1.1f * valorDoEmprestimo, 2));
+            propostas.add(new Proposta(1.3f * valorDoEmprestimo, 4));
+            propostas.add(new Proposta(1.3f * valorDoEmprestimo, 10));
+            propostas.add(new Proposta(1.4f * valorDoEmprestimo, 20));
             return propostas;
         }
     }
