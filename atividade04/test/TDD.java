@@ -55,10 +55,10 @@ public class TDD {
     
     @Test
     public void cargoInexistente(){
-        f.setCargo(" ");
+        f.setCargo("");
         f.setEmail("dev@email.com");
         f.setNome("Nome");
-        f.setSalarioBase(0);
+        f.setSalarioBase(1000);
         
         try {
             float res = calculadora.calcular(f.getCargo(), f.getSalarioBase());
