@@ -1,6 +1,7 @@
 import codigo.ControladorCargo;
 import codigo.Funcionario;
 import org.junit.Assert;
+import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -62,8 +63,24 @@ public class TDD {
         
         try {
             float res = calculadora.calcular(f.getCargo(), f.getSalarioBase());
+            fail();
         } catch (Exception ex) {
-            Assert.assertEquals("Informe um cargo válido!",  ex.getMessage());
+            Assert.assertEquals("Informe um cargo!",  ex.getMessage());
+        }
+    }
+    
+    @Test
+    public void cargoInválido(){
+        f.setCargo("Dentista");
+        f.setEmail("dev@email.com");
+        f.setNome("Nome");
+        f.setSalarioBase(1000);
+        
+        try {
+            float res = calculadora.calcular(f.getCargo(), f.getSalarioBase());
+            fail();
+        } catch (Exception ex) {
+            Assert.assertEquals("Informe um cargo válido!\nDESENVOLVEDOR\nDBA\nTESTADOR\nGERENTE",  ex.getMessage());
         }
     }
     

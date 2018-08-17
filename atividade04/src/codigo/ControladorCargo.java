@@ -7,7 +7,9 @@ public class ControladorCargo {
         if (salario == 0){ 
             throw new Exception("Informe um salário maior que 0!"); 
         }else if (cargo == ""){
-            throw new Exception("Informe um cargo válido!"); 
+            throw new Exception("Informe um cargo!"); 
+        }else if (cargo != "DESENVOLVEDOR" && cargo != "DBA" && cargo != "TESTADOR" && cargo != "GERENTE"){
+            throw new Exception("Informe um cargo válido!\nDESENVOLVEDOR\nDBA\nTESTADOR\nGERENTE");
         }
         
         else{
