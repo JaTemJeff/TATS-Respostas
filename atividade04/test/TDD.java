@@ -52,4 +52,19 @@ public class TDD {
         }
     }
     
+    
+    @Test
+    public void cargoInexistente(){
+        f.setCargo(" ");
+        f.setEmail("dev@email.com");
+        f.setNome("Nome");
+        f.setSalarioBase(0);
+        
+        try {
+            float res = calculadora.calcular(f.getCargo(), f.getSalarioBase());
+        } catch (Exception ex) {
+            Assert.assertEquals("Informe um cargo válido!",  ex.getMessage());
+        }
+    }
+    
 }
