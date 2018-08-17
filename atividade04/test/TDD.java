@@ -1,18 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import codigo.ControladorCargo;
 import codigo.Funcionario;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
-/**
- *
- * @author Notebook
- */
+
 public class TDD {
     Funcionario f;
     ControladorCargo calculadora;
@@ -24,7 +15,7 @@ public class TDD {
     }
     
     @Test
-    public void desenvolvedorComSalarioMaiorQue3Mil(){
+    public void desenvolvedorComSalarioMaiorQue3Mil() throws Exception{
         f.setCargo("DESENVOLVEDOR");
         f.setEmail("dev@email.com");
         f.setNome("Nome dev");
@@ -32,9 +23,11 @@ public class TDD {
         
         float res = calculadora.calcular(f.getCargo(), f.getSalarioBase());
         
-        assertEquals(4000f, res);
+        Assert.assertEquals(4000f, res, 0);
     }
-    @Test public void desenvolvedorComSalarioMenorQue3Mil(){
+    
+    @Test 
+    public void desenvolvedorComSalarioMenorQue3Mil() throws Exception{
         f.setCargo("DESENVOLVEDOR");
         f.setEmail("dev@email.com");
         f.setNome("Nome dev");
@@ -42,7 +35,21 @@ public class TDD {
         
         float res = calculadora.calcular(f.getCargo(), f.getSalarioBase());
         
-        assertEquals(900f, res);
+        Assert.assertEquals(900f, res, 0);
+    }
+    
+    @Test
+    public void desenvolvedorComSalarioZero(){
+        f.setCargo("DESENVOLVEDOR");
+        f.setEmail("dev@email.com");
+        f.setNome("Nome dev");
+        f.setSalarioBase(0);
+        
+        try {
+            float res = calculadora.calcular(f.getCargo(), f.getSalarioBase());
+        } catch (Exception ex) {
+            Assert.assertEquals("Informe um salário maior que 0!",  ex.getMessage());
+        }
     }
     
 }
