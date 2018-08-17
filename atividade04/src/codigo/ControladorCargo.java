@@ -5,7 +5,7 @@ public class ControladorCargo {
 
     public float calcular(String cargo, float salario) throws Exception {
         if (salario == 0){ 
-            throw new Exception(); 
+            throw new Exception("Informe um salário maior que 0!"); 
         }else {
             if (cargo == "DESENVOLVEDOR") {
                 if (salario >= 3000) {
